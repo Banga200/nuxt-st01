@@ -1,0 +1,14 @@
+@import './base.css';
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .5rem 9%;
+  background: rgb(238, 238, 238);
+}
+
+header .user-info {
+  display: flex;
+  align-items: center;
+}
