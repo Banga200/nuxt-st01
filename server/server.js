@@ -62,12 +62,14 @@ app.delete('/todos/:id', auth, ownToDo, (req, res) => {
 function auth(req, res, next) {
     const { authorization } = req.headers;
     // if there is no authorization header, return 401
+    console.log(req.headers)
     if (!authorization) {
         res.status(401).send({
             message: 'Unauthorized'
         });
         return;
     }
+    
     const [username, password] = Buffer.from(authorization.split(' ')[1], 'base64').toString().split(':');
     const user = users.find(user => user.username === username && user.password === password);
     if (!user) {
